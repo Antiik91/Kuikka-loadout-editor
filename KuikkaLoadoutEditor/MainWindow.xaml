@@ -1,0 +1,14 @@
+﻿<Window x:Class="KuikkaLoadoutEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Loadouteditor" Height="476" Width="525">
+    <Grid>
+        <TextBox x:Name="arsenalLoadout" HorizontalAlignment="Left" Height="261" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="311" Margin="20,104,0,0" TextChanged="arsenalLoadout_TextChanged" UndoLimit="0"/>
+        <Label Content="Liitä arsenal koodisi alle" HorizontalAlignment="Left" Margin="20,78,0,0" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="role" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="65,50,0,0" TextChanged="role_TextChanged"/>
+        <Label Content="Rooli:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,50,0,0"/>
+        <Button x:Name="newLoadout" Content="Lisää loadoutiin" HorizontalAlignment="Left" Margin="99,400,0,0" VerticalAlignment="Top" Width="106" Click="newLoadout_Click"/>
+        <Button x:Name="ChangeToSqf" Content="Luo loadout tiedosto" HorizontalAlignment="Left" Margin="364,138,0,0" VerticalAlignment="Top" Width="121" Click="ChangeToSqf_Click"/>
+
+    </Grid>
+</Window>
