@@ -39,8 +39,16 @@ namespace KuikkaLoadoutEditor
 
         private void newLoadout_Click(object sender, RoutedEventArgs e)
         {
-            this.loadoutList.add(new Loadout(role.Text, arsenalLoadout.Text));
-            this.roleList.Items.Add(role.Text);
+            if (loadoutList.roleExist(this.role.Text))
+            {
+               loadoutList.editLoadout(this.role.Text, this.arsenalLoadout.Text);
+            }
+            else
+            {
+                this.loadoutList.add(new Loadout(role.Text, arsenalLoadout.Text));
+                this.roleList.Items.Add(role.Text);
+            }
+
             this.arsenalLoadout.Text = "";
             this.role.Text = "";
             
@@ -50,7 +58,18 @@ namespace KuikkaLoadoutEditor
         private void ChangeToSqf_Click(object sender, RoutedEventArgs e)
         {
             loadoutList.createSqfFile();
-            MessageBox.Show("loadout tiedostosi on luotu C:n juureen nimellä newLoadOut");
+            MessageBox.Show("loadout tiedostosi on luotu työpöydälle nimellä newLoadOut");
+        }
+
+
+
+        private void roleList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {   
+            int index = roleList.SelectedIndex;
+            String roleClicked = roleList.Items[index].ToString();
+            arsenalLoadout.Text = this.loadoutList.getLoadout(roleClicked);
+            role.Text = roleClicked;
+           
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

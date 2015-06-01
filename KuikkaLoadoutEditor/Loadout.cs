@@ -34,7 +34,7 @@ namespace KuikkaLoadoutEditor
         
         public override string ToString()
         {
-            return "case " + "\"" + this.name + "\"" + ": {" + "\r\n" + this.bodyText + "};" + "\r\n";
+            return "case " + "\"" + this.name + "\"" + ": {" + "\r\n" + this.bodyText +  "\r\n" + " };" + "\r\n";
         }
     }
 

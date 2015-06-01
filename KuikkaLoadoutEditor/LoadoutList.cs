@@ -23,6 +23,40 @@ namespace KuikkaLoadoutEditor
             this.loadoutList.Add(loadout);
         }
 
+        public bool roleExist(String SearchableString)
+        {
+            foreach (Loadout l in loadoutList)
+            {
+                if (l.name.Equals(SearchableString))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void editLoadout(String roleToEdit, String newBodyText)
+        {
+            foreach (Loadout l in loadoutList)
+            {
+                if(l.name.Equals(roleToEdit)){
+                    l.bodyText = newBodyText;
+                }
+            }
+        }
+
+        public String getLoadout(String role)
+        {
+            String roleFound = "";
+            foreach (Loadout l in loadoutList)
+            {
+                if (l.name.Equals(role))
+                {
+                    roleFound = l.bodyText;
+                }
+            }
+            return roleFound;
+        }
 
         public void createSqfFile()
         {
@@ -39,9 +73,9 @@ namespace KuikkaLoadoutEditor
                     file.Write(l);
                 }
 
-                file.WriteLine("};");
+                file.WriteLine("   };");
                 file.WriteLine("titleText[\"\",\"PLAIN\"];");
-                // titleText["","PLAIN"];
+                
             }
         }
        
