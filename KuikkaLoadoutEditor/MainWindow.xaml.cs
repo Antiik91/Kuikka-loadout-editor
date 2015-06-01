@@ -40,7 +40,10 @@ namespace KuikkaLoadoutEditor
         private void newLoadout_Click(object sender, RoutedEventArgs e)
         {
             this.loadoutList.add(new Loadout(role.Text, arsenalLoadout.Text));
-   
+            this.roleList.Items.Add(role.Text);
+            this.arsenalLoadout.Text = "";
+            this.role.Text = "";
+            
             
         }
 
@@ -48,6 +51,11 @@ namespace KuikkaLoadoutEditor
         {
             loadoutList.createSqfFile();
             MessageBox.Show("loadout tiedostosi on luotu C:n juureen nimellä newLoadOut");
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

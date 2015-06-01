@@ -26,7 +26,7 @@ namespace KuikkaLoadoutEditor
 
         public void createSqfFile()
         {
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\newLoadOut.txt"))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\User\Desktop\newLoadOut.sqf"))
             {
                 file.WriteLine("_unit = _this select 0;");
                 file.WriteLine("_role = _this select 1;");
