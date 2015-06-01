@@ -63,18 +63,16 @@ namespace KuikkaLoadoutEditor
 
 
 
-        private void roleList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {   
+     
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
             int index = roleList.SelectedIndex;
             String roleClicked = roleList.Items[index].ToString();
+
             arsenalLoadout.Text = this.loadoutList.getLoadout(roleClicked);
             role.Text = roleClicked;
-           
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

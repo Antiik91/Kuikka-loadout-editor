@@ -9,7 +9,9 @@
         <Label Content="Rooli:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,50,0,0"/>
         <Button x:Name="newLoadout" Content="Lisää loadoutiin" HorizontalAlignment="Left" Margin="99,400,0,0" VerticalAlignment="Top" Width="106" Click="newLoadout_Click"/>
         <Button x:Name="ChangeToSqf" Content="Luo loadout tiedosto" HorizontalAlignment="Left" Margin="346,10,0,0" VerticalAlignment="Top" Width="121" Click="ChangeToSqf_Click"/>
-        <ListBox x:Name="roleList" HorizontalAlignment="Left" Height="190" Margin="389,104,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="ListBox_SelectionChanged" MouseDoubleClick="roleList_MouseDoubleClick"/>
+        <ComboBox x:Name="roleList" HorizontalAlignment="Left" Margin="367,104,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label Content="Liitä arsenal koodisi alle" HorizontalAlignment="Left" Margin="20,78,0,0" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Luodut roolit" HorizontalAlignment="Left" Margin="367,78,0,0" VerticalAlignment="Top" Width="135"/>
 
     </Grid>
 </Window>
