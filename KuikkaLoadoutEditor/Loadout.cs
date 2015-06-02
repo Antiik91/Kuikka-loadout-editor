@@ -33,7 +33,7 @@ namespace KuikkaLoadoutEditor
 
         private void seperate()
         {
-            String[] words = this.bodyText.Split(' ');
+            String[] words = this.bodyText.Split(';', ' ' );
 
             for (int i = 0; i < words.Length; i++)
             {

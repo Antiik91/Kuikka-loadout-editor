@@ -21,13 +21,13 @@ namespace KuikkaLoadoutEditor
     public partial class MainWindow : Window
     {
          LoadoutList loadoutList;
-        private VisibilityHandler visibilityHandler;
+         String oldWeapon;
         
         public MainWindow()
         {
             InitializeComponent();
             this.loadoutList = new LoadoutList();
-            visibilityHandler = new VisibilityHandler(this);
+            oldWeapon = "";
         }
 
 
@@ -52,6 +52,7 @@ namespace KuikkaLoadoutEditor
             Box_Loadout.Text = this.loadoutList.getLoadout(roleClicked);
             role.Text = roleClicked;
             weaponBox.Text = this.loadoutList.returnLoadout(roleClicked).weapon;
+            oldWeapon = this.loadoutList.returnLoadout(roleClicked).weapon;
             Box_Uniform.Text = this.loadoutList.returnLoadout(roleClicked).uniform;
             Box_Vest.Text = this.loadoutList.returnLoadout(roleClicked).vest;
             Box_bacpack.Text = this.loadoutList.returnLoadout(roleClicked).backpack;
@@ -94,6 +95,16 @@ namespace KuikkaLoadoutEditor
         private void WeaponBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+            // This doesn't work
+            String[] items = Box_Loadout.Text.Split(' ');
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i].Equals("addWeapon"))
+                {
+                    items[i + 1] = weaponBox.Text;
+                    oldWeapon = weaponBox.Text;
+                }
+            }
         }
 
         private void Box_Uniform_TextChanged(object sender, TextChangedEventArgs e)
