@@ -51,6 +51,13 @@ namespace KuikkaLoadoutEditor
 
             Box_Loadout.Text = this.loadoutList.getLoadout(roleClicked);
             role.Text = roleClicked;
+            weaponBox.Text = this.loadoutList.returnLoadout(roleClicked).weapon;
+            Box_Uniform.Text = this.loadoutList.returnLoadout(roleClicked).uniform;
+            Box_Vest.Text = this.loadoutList.returnLoadout(roleClicked).vest;
+            Box_bacpack.Text = this.loadoutList.returnLoadout(roleClicked).backpack;
+            Box_HeadGear.Text = this.loadoutList.returnLoadout(roleClicked).headGear;
+
+
         }
 
         public void createRole_Click(object sender, RoutedEventArgs e)
@@ -82,6 +89,31 @@ namespace KuikkaLoadoutEditor
             }
 
             
+        }
+
+        private void WeaponBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Box_Uniform_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Box_Vest_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Box_bacpack_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Box_HeadGear_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
 

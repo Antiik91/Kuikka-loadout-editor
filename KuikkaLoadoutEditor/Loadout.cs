@@ -17,6 +17,7 @@ namespace KuikkaLoadoutEditor
             this.name = name;
             this.bodyText = bodyText;
             this.editToSqfFormat();
+            this.seperate();
             
         }
 
@@ -24,7 +25,39 @@ namespace KuikkaLoadoutEditor
         
         public String name { get; set; }
         public String bodyText{ get; set; }
+        public String weapon { get; set; }
+        public String uniform { get; set; }
+        public String vest { get; set; }
+        public String headGear { get; set; }
+        public String backpack { get; set; }
 
+        private void seperate()
+        {
+            String[] words = this.bodyText.Split(' ');
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i].Equals("addWeapon"))
+                {
+                    weapon = words[i + 1];
+                }
+                else if (words[i].Equals("forceAddUniform"))
+                {
+                    uniform = words[i + 1];
+                }
+                else if (words[i].Equals("addVest"))
+                {
+                    vest = words[i + 1];
+                }
+                else if (words[i].Equals("addHeadgear"))
+                {
+                    headGear = words[i + 1];
+                } else if (words[i].Equals("addBackpack")){
+                    backpack = words[i+1];
+                }
+            }
+
+        }
         private void editToSqfFormat()
         {
            this.bodyText = this.bodyText.Replace("this", "_unit");

@@ -58,6 +58,17 @@ namespace KuikkaLoadoutEditor
             return roleFound;
         }
 
+        public Loadout returnLoadout(String roleName)
+        {
+            foreach (Loadout l in loadoutList)
+            {
+                if (l.name.Equals(roleName))
+                {
+                    return l;
+                }
+            }
+            return null;
+        }
         public void createSqfFile()
         {
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\User\Desktop\newLoadOut.sqf"))
