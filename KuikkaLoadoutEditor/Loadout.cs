@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace KuikkaLoadoutEditor
 {
   
-    class Loadout
+    public class Loadout
     {
  
 

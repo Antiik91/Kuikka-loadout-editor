@@ -20,40 +20,18 @@ namespace KuikkaLoadoutEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        private LoadoutList loadoutList;
+         LoadoutList loadoutList;
+        private VisibilityHandler visibilityHandler;
+        
         public MainWindow()
         {
             InitializeComponent();
             this.loadoutList = new LoadoutList();
+            visibilityHandler = new VisibilityHandler(this);
         }
 
-        private void arsenalLoadout_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
 
-        private void role_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        private void newLoadout_Click(object sender, RoutedEventArgs e)
-        {
-            if (loadoutList.roleExist(this.role.Text))
-            {
-               loadoutList.editLoadout(this.role.Text, this.arsenalLoadout.Text);
-            }
-            else
-            {
-                this.loadoutList.add(new Loadout(role.Text, arsenalLoadout.Text));
-                this.roleList.Items.Add(role.Text);
-            }
-
-            this.arsenalLoadout.Text = "";
-            this.role.Text = "";
-            
-            
-        }
 
         private void ChangeToSqf_Click(object sender, RoutedEventArgs e)
         {
@@ -65,14 +43,47 @@ namespace KuikkaLoadoutEditor
 
      
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
             int index = roleList.SelectedIndex;
             String roleClicked = roleList.Items[index].ToString();
 
-            arsenalLoadout.Text = this.loadoutList.getLoadout(roleClicked);
+            Box_Loadout.Text = this.loadoutList.getLoadout(roleClicked);
             role.Text = roleClicked;
         }
+
+        public void createRole_Click(object sender, RoutedEventArgs e)
+        {
+            Window luoRooli = new CreateRole(loadoutList, roleList);
+            luoRooli.Show();
+           
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Box_Loadout_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void editLoadout_Click(object sender, RoutedEventArgs e)
+        {
+            if (loadoutList.roleExist(this.role.Text))
+            {
+                loadoutList.editLoadout(this.role.Text, this.Box_Loadout.Text);
+            }
+            else
+            {
+                MessageBox.Show("Roolia ei löytynyt");
+            }
+
+            
+        }
+
+
     }
 }

@@ -3,15 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Loadouteditor" Height="476" Width="525">
     <Grid>
-        <TextBox x:Name="arsenalLoadout" HorizontalAlignment="Left" Height="261" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="311" Margin="20,104,0,0" TextChanged="arsenalLoadout_TextChanged" UndoLimit="0"/>
-        <Label Content="Liitä arsenal koodisi alle" HorizontalAlignment="Left" Margin="20,78,0,0" VerticalAlignment="Top" Width="135"/>
-        <TextBox x:Name="role" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="65,50,0,0" TextChanged="role_TextChanged"/>
-        <Label Content="Rooli:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,50,0,0"/>
-        <Button x:Name="newLoadout" Content="Lisää loadoutiin" HorizontalAlignment="Left" Margin="99,400,0,0" VerticalAlignment="Top" Width="106" Click="newLoadout_Click"/>
         <Button x:Name="ChangeToSqf" Content="Luo loadout tiedosto" HorizontalAlignment="Left" Margin="346,10,0,0" VerticalAlignment="Top" Width="121" Click="ChangeToSqf_Click"/>
         <ComboBox x:Name="roleList" HorizontalAlignment="Left" Margin="367,104,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Label Content="Liitä arsenal koodisi alle" HorizontalAlignment="Left" Margin="20,78,0,0" VerticalAlignment="Top" Width="135"/>
         <Label Content="Luodut roolit" HorizontalAlignment="Left" Margin="367,78,0,0" VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="createRole" Content="Luo Rooli" HorizontalAlignment="Left" Margin="256,10,0,0" VerticalAlignment="Top" Width="75" Click="createRole_Click"/>
+        <TextBox x:Name="role" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="63,65,0,0" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Box_Loadout" HorizontalAlignment="Left" Height="314" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" Margin="22,110,0,0" TextChanged="Box_Loadout_TextChanged"/>
+        <Label Content="Rooli" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+        <Button x:Name="editLoadout" Content="Tallenna muutokset" HorizontalAlignment="Left" Margin="346,402,0,0" VerticalAlignment="Top" Width="121" Click="editLoadout_Click"/>
 
     </Grid>
 </Window>

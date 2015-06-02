@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+
 
 
 
 namespace KuikkaLoadoutEditor
 {
-    class LoadoutList
+   public class LoadoutList
     {
-        private List<Loadout> loadoutList;
+        public List<Loadout> loadoutList;
 
         public LoadoutList()
         {
