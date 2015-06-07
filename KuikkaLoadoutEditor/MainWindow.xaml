@@ -4,18 +4,23 @@
         Title="Loadouteditor" Height="796.7" Width="525">
     <Grid>
         <Button x:Name="ChangeToSqf" Content="Luo loadout tiedosto" HorizontalAlignment="Left" Margin="346,10,0,0" VerticalAlignment="Top" Width="121" Click="ChangeToSqf_Click"/>
-        <ComboBox x:Name="roleList" HorizontalAlignment="Left" Margin="367,104,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Label Content="Luodut roolit" HorizontalAlignment="Left" Margin="367,78,0,0" VerticalAlignment="Top" Width="135"/>
+        <ComboBox x:Name="roleList" HorizontalAlignment="Left" Margin="372,93,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label Content="Luodut roolit" HorizontalAlignment="Left" Margin="372,62,0,0" VerticalAlignment="Top" Width="135"/>
         <Button x:Name="createRole" Content="Luo Rooli" HorizontalAlignment="Left" Margin="256,10,0,0" VerticalAlignment="Top" Width="75" Click="createRole_Click"/>
-        <TextBox x:Name="role" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="63,65,0,0" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="Box_Loadout" HorizontalAlignment="Left" Height="314" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" Margin="0,380,0,0" TextChanged="Box_Loadout_TextChanged"/>
-        <Label Content="Rooli" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
-        <Button x:Name="editLoadout" Content="Tallenna muutokset" HorizontalAlignment="Left" Margin="346,402,0,0" VerticalAlignment="Top" Width="121" Click="editLoadout_Click"/>
-        <TextBox x:Name="weaponBox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" Text="Ase" VerticalAlignment="Top" Width="135" Margin="10,110,0,0" TextChanged="WeaponBox_TextChanged"/>
-        <TextBox x:Name="Box_Uniform" HorizontalAlignment="Left" Height="32" Margin="10,174,0,0" TextWrapping="Wrap" Text="Uniformu" VerticalAlignment="Top" Width="135" TextChanged="Box_Uniform_TextChanged"/>
-        <TextBox x:Name="Box_Vest" HorizontalAlignment="Left" Height="33" Margin="10,231,0,0" TextWrapping="Wrap" Text="Liivi" VerticalAlignment="Top" Width="135" TextChanged="Box_Vest_TextChanged"/>
-        <TextBox x:Name="Box_bacpack" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Reppu" VerticalAlignment="Top" Width="135" Margin="10,283,0,0" TextChanged="Box_bacpack_TextChanged"/>
-        <TextBox x:Name="Box_HeadGear" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Päähine" VerticalAlignment="Top" Width="135" Margin="10,331,0,0" TextChanged="Box_HeadGear_TextChanged"/>
+        <TextBox x:Name="roleBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="70,63,0,0" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="loadoutBox" HorizontalAlignment="Left" Height="314" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" Margin="0,380,0,0" TextChanged="Box_Loadout_TextChanged"/>
+        <Label Content="Rooli" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,62,0,0"/>
+        <Button x:Name="editLoadout" Content="Tallenna muutokset" HorizontalAlignment="Left" Margin="346,380,0,0" VerticalAlignment="Top" Width="121" Click="editLoadout_Click"/>
+        <TextBox x:Name="weaponBox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,110,0,0" TextChanged="WeaponBox_TextChanged"/>
+        <TextBox x:Name="uniformBox" HorizontalAlignment="Left" Height="32" Margin="70,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" TextChanged="Box_Uniform_TextChanged"/>
+        <TextBox x:Name="vestBox" HorizontalAlignment="Left" Height="33" Margin="70,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" TextChanged="Box_Vest_TextChanged"/>
+        <TextBox x:Name="backpackBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,284,0,0" TextChanged="Box_bacpack_TextChanged"/>
+        <TextBox x:Name="headGearBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,343,0,0" TextChanged="Box_HeadGear_TextChanged"/>
+        <Label Content="Ase" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,110,0,0"/>
+        <Label Content="Uniformu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,174,0,0"/>
+        <Label Content="Liivi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,230,0,0" RenderTransformOrigin="0.474,-1.038"/>
+        <Label Content="Reppu" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.763,6.692" Margin="10,290,0,0"/>
+        <Label Content="Päähine" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,343,0,0"/>
 
     </Grid>
 </Window>

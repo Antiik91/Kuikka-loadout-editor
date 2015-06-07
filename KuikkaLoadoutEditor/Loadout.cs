@@ -31,6 +31,11 @@ namespace KuikkaLoadoutEditor
         public String headGear { get; set; }
         public String backpack { get; set; }
 
+        public void edit(String newWeapon)
+        {
+            weapon = newWeapon;
+        }
+
         private void seperate()
         {
             String[] words = this.bodyText.Split(';', ' ' );

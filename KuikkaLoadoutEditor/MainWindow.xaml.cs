@@ -27,7 +27,7 @@ namespace KuikkaLoadoutEditor
         {
             InitializeComponent();
             this.loadoutList = new LoadoutList();
-            oldWeapon = "";
+            oldWeapon = weaponBox.Text;
         }
 
 
@@ -45,19 +45,25 @@ namespace KuikkaLoadoutEditor
 
         public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            int index = roleList.SelectedIndex;
-            String roleClicked = roleList.Items[index].ToString();
+            if (roleList.SelectedIndex < 0)
+            {
 
-            Box_Loadout.Text = this.loadoutList.getLoadout(roleClicked);
-            role.Text = roleClicked;
-            weaponBox.Text = this.loadoutList.returnLoadout(roleClicked).weapon;
-            oldWeapon = this.loadoutList.returnLoadout(roleClicked).weapon;
-            Box_Uniform.Text = this.loadoutList.returnLoadout(roleClicked).uniform;
-            Box_Vest.Text = this.loadoutList.returnLoadout(roleClicked).vest;
-            Box_bacpack.Text = this.loadoutList.returnLoadout(roleClicked).backpack;
-            Box_HeadGear.Text = this.loadoutList.returnLoadout(roleClicked).headGear;
+            }
+            else
+            {
 
+                int index = roleList.SelectedIndex;
+                String roleClicked = roleList.Items[index].ToString();
+
+                loadoutBox.Text = this.loadoutList.getLoadout(roleClicked);
+                roleBox.Text = roleClicked;
+                weaponBox.Text = this.loadoutList.returnLoadout(roleClicked).weapon;
+                oldWeapon = this.loadoutList.returnLoadout(roleClicked).weapon;
+                uniformBox.Text = this.loadoutList.returnLoadout(roleClicked).uniform;
+                vestBox.Text = this.loadoutList.returnLoadout(roleClicked).vest;
+                backpackBox.Text = this.loadoutList.returnLoadout(roleClicked).backpack;
+                headGearBox.Text = this.loadoutList.returnLoadout(roleClicked).headGear;
+            }
 
         }
 
@@ -80,9 +86,13 @@ namespace KuikkaLoadoutEditor
 
         private void editLoadout_Click(object sender, RoutedEventArgs e)
         {
-            if (loadoutList.roleExist(this.role.Text))
+            if (loadoutList.roleExist(this.roleBox.Text))
             {
-                loadoutList.editLoadout(this.role.Text, this.Box_Loadout.Text);
+                
+                loadoutList.editLoadout(this.roleBox.Text, this.loadoutBox.Text);
+                
+
+                   
             }
             else
             {
@@ -95,16 +105,23 @@ namespace KuikkaLoadoutEditor
         private void WeaponBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-            // This doesn't work
-            String[] items = Box_Loadout.Text.Split(' ');
-            for (int i = 0; i < items.Length; i++)
+            try
             {
-                if (items[i].Equals("addWeapon"))
+                if (oldWeapon.Length > 0 && weaponBox.Text.Length > 0)
                 {
-                    items[i + 1] = weaponBox.Text;
+                    MessageBox.Show("Tämä on ns vanhaAse" + oldWeapon);
+                    this.loadoutBox.Text.Replace(oldWeapon, weaponBox.Text);
                     oldWeapon = weaponBox.Text;
                 }
             }
+            catch (Exception)
+            {
+                return;
+            }
+            
+
+            
+
         }
 
         private void Box_Uniform_TextChanged(object sender, TextChangedEventArgs e)
