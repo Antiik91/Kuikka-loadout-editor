@@ -3,27 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Loadouteditor" Height="796.7" Width="525">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
         <Button x:Name="ChangeToSqf" Content="Luo loadout tiedosto" HorizontalAlignment="Left" Margin="346,10,0,0" VerticalAlignment="Top" Width="121" Click="ChangeToSqf_Click"/>
-        <ComboBox x:Name="roleList" HorizontalAlignment="Left" Margin="372,93,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Label Content="Luodut roolit" HorizontalAlignment="Left" Margin="372,62,0,0" VerticalAlignment="Top" Width="135"/>
+        <ComboBox x:Name="roleList" HorizontalAlignment="Left" Margin="372,34,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" Grid.Row="1"/>
+        <Label Content="Luodut roolit" HorizontalAlignment="Left" Margin="371,1,0,0" VerticalAlignment="Top" Width="135" Grid.Row="1"/>
         <Button x:Name="createRole" Content="Luo Rooli" HorizontalAlignment="Left" Margin="256,10,0,0" VerticalAlignment="Top" Width="75" Click="createRole_Click"/>
-        <TextBox x:Name="roleBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="70,63,0,0" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="loadoutBox" HorizontalAlignment="Left" Height="314" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" Margin="0,380,0,0" TextChanged="Box_Loadout_TextChanged"/>
-        <Label Content="Rooli" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,62,0,0"/>
-        <Button x:Name="editLoadout" Content="Tallenna muutokset" HorizontalAlignment="Left" Margin="346,380,0,0" VerticalAlignment="Top" Width="121" Click="editLoadout_Click"/>
-        <TextBox x:Name="weaponBox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,110,0,0" TextChanged="WeaponBox_TextChanged"/>
-        <TextBox x:Name="uniformBox" HorizontalAlignment="Left" Height="32" Margin="70,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" TextChanged="uniformBox_TextChanged"/>
-        <TextBox x:Name="vestBox" HorizontalAlignment="Left" Height="33" Margin="70,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" TextChanged="vestBox_TextChanged"/>
-        <TextBox x:Name="backpackBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,284,0,0" TextChanged="backpackBox_TextChanged"/>
-        <TextBox x:Name="headGearBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,343,0,0" TextChanged="headGearBox_TextChanged"/>
-        <Label Content="Ase" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,110,0,0"/>
-        <Label Content="Uniformu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,174,0,0"/>
-        <Label Content="Liivi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,230,0,0" RenderTransformOrigin="0.474,-1.038"/>
-        <Label Content="Reppu" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.763,6.692" Margin="10,290,0,0"/>
-        <Label Content="Päähine" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,343,0,0"/>
-        <Button x:Name="buttonRemove" Content="Poista" HorizontalAlignment="Left" Margin="392,131,0,0" VerticalAlignment="Top" Width="75" Click="buttonRemove_Click"/>
-        <Label Content="Esineet uniformussa" HorizontalAlignment="Left" Margin="371,174,0,0" VerticalAlignment="Top" Width="121"/>
-        <TextBox x:Name="itemsInUniformBox" HorizontalAlignment="Left" Height="37" Margin="372,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="itemsInUniformBox_TextChanged"/>
+        <TextBox x:Name="roleBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="203,4,0,0" TextChanged="TextBox_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="loadoutBox" HorizontalAlignment="Left" Height="314" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" Margin="59,487,0,-93" TextChanged="Box_Loadout_TextChanged" Grid.Row="1"/>
+        <Label Content="Rooli" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,3,0,0" Grid.Row="1"/>
+        <Button x:Name="editLoadout" Content="Tallenna muutokset" HorizontalAlignment="Left" Margin="154,441,0,0" VerticalAlignment="Top" Width="121" Click="editLoadout_Click" Grid.Row="1"/>
+        <TextBox x:Name="weaponBox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="74,51,0,0" TextChanged="WeaponBox_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="uniformBox" HorizontalAlignment="Left" Height="32" Margin="70,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" TextChanged="uniformBox_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="vestBox" HorizontalAlignment="Left" Height="33" Margin="70,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" TextChanged="vestBox_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="backpackBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,225,0,0" TextChanged="backpackBox_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="headGearBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="70,284,0,0" TextChanged="headGearBox_TextChanged" Grid.Row="1"/>
+        <Label Content="Ase" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,51,0,0" Grid.Row="1"/>
+        <Label Content="Uniformu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,115,0,0" Grid.Row="1"/>
+        <Label Content="Liivi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,171,0,0" RenderTransformOrigin="0.474,-1.038" Grid.Row="1"/>
+        <Label Content="Reppu" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.763,6.692" Margin="10,231,0,0" Grid.Row="1"/>
+        <Label Content="Päähine" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,284,0,0" Grid.Row="1"/>
+        <Button x:Name="buttonRemove" Content="Poista" HorizontalAlignment="Left" Margin="392,72,0,0" VerticalAlignment="Top" Width="75" Click="buttonRemove_Click" Grid.Row="1"/>
+        <Label Content="Esineet uniformussa" HorizontalAlignment="Left" Margin="222,115,0,0" VerticalAlignment="Top" Width="121" Grid.Row="1"/>
+        <TextBox x:Name="itemsInUniformBox" HorizontalAlignment="Left" Height="41" Margin="348,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" TextChanged="itemsInUniformBox_TextChanged" Grid.Row="1"/>
+        <Label Content="Esineet liivissä" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="222,171,0,0" Grid.Row="1" Width="109"/>
+        <TextBox x:Name="itemsInVestBox" HorizontalAlignment="Left" Height="48" Margin="348,171,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" TextChanged="itemsInVestBox_TextChanged"/>
+        <Label Content="Esineet repussa" HorizontalAlignment="Left" Margin="222,231,0,0" Grid.Row="1" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="itemsInBackPackBox" HorizontalAlignment="Left" Height="47" Margin="346,241,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" TextChanged="itemsInBackPacBox_TextChanged"/>
+        <Label Content="Muut esineet" HorizontalAlignment="Left" Margin="222,329,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-1.289,2.269" Width="86"/>
+        <TextBox x:Name="otherItemsBox" HorizontalAlignment="Left" Height="61" Margin="346,329,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.617,0.082" TextChanged="otherItemsBox_TextChanged"/>
 
     </Grid>
 </Window>

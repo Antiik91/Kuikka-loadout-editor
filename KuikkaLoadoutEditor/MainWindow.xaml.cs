@@ -27,6 +27,9 @@ namespace KuikkaLoadoutEditor
          String oldBackpack;
          String oldHeadGear;
          String oldItemsInUniform;
+         String oldItemsInVest;
+         String oldItemsInBackPack;
+         String oldOtherItems;
         
         public MainWindow()
         {
@@ -74,6 +77,12 @@ namespace KuikkaLoadoutEditor
                 oldHeadGear = headGearBox.Text;
                 itemsInUniformBox.Text = this.loadoutList.returnLoadout(roleClicked).itemsInUniform;
                 oldItemsInUniform = itemsInUniformBox.Text;
+                itemsInVestBox.Text = this.loadoutList.returnLoadout(roleClicked).itemsInVest;
+                oldItemsInVest = itemsInVestBox.Text;
+                itemsInBackPackBox.Text = this.loadoutList.returnLoadout(roleClicked).itemsInBackPack;
+                oldItemsInBackPack = itemsInBackPackBox.Text;
+                otherItemsBox.Text = this.loadoutList.returnLoadout(roleClicked).otherItems;
+                oldOtherItems = otherItemsBox.Text;
             }
 
         }
@@ -139,8 +148,26 @@ namespace KuikkaLoadoutEditor
                     oldHeadGear = headGearBox.Text;
                 }
 
-                if(oldItemsInUniform.Length > 0 && itemsInUniformBox.Text.Length > 0){
+                if(oldItemsInUniform.Length > 0 && itemsInUniformBox.Text.Length > 0)
+                {
                     this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldUniform, uniformBox.Text);
+                    oldItemsInUniform = itemsInUniformBox.Text;
+                }
+
+                if (oldItemsInVest.Length > 0 && itemsInVestBox.Text.Length > 0)
+                {
+                    this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldItemsInVest, itemsInVestBox.Text);
+                    oldItemsInVest = itemsInVestBox.Text;
+                }
+                if (oldItemsInBackPack.Length > 0 && itemsInBackPackBox.Text.Length > 0)
+                {
+                    this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldItemsInBackPack, itemsInBackPackBox.Text);
+                    oldItemsInBackPack = itemsInBackPackBox.Text;
+                }
+                if (oldOtherItems.Length > 0 && otherItemsBox.Text.Length > 0)
+                {
+                    this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldOtherItems, otherItemsBox.Text);
+                    oldOtherItems = otherItemsBox.Text;
                 }
             }
             catch (Exception)
@@ -194,6 +221,21 @@ namespace KuikkaLoadoutEditor
         }
 
         private void itemsInUniformBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void itemsInVestBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void itemsInBackPacBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void otherItemsBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
