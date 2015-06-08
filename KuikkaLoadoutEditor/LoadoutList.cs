@@ -45,17 +45,23 @@ namespace KuikkaLoadoutEditor
             }
         }
 
+
+       // this doesn't work
+        public void remove(Loadout removable)
+        {
+            loadoutList.Remove(removable);
+        }
         public String getLoadout(String role)
         {
-            String roleFound = "";
+            String bodyText = "";
             foreach (Loadout l in loadoutList)
             {
                 if (l.name.Equals(role))
                 {
-                    roleFound = l.bodyText;
+                    bodyText = l.bodyText;
                 }
             }
-            return roleFound;
+            return bodyText;
         }
 
         public Loadout returnLoadout(String roleName)

@@ -22,6 +22,11 @@ namespace KuikkaLoadoutEditor
     {
          LoadoutList loadoutList;
          String oldWeapon;
+         String oldUniform;
+         String oldVest;
+         String oldBackpack;
+         String oldHeadGear;
+         String oldItemsInUniform;
         
         public MainWindow()
         {
@@ -58,11 +63,17 @@ namespace KuikkaLoadoutEditor
                 loadoutBox.Text = this.loadoutList.getLoadout(roleClicked);
                 roleBox.Text = roleClicked;
                 weaponBox.Text = this.loadoutList.returnLoadout(roleClicked).weapon;
-                oldWeapon = this.loadoutList.returnLoadout(roleClicked).weapon;
+                oldWeapon = weaponBox.Text;
                 uniformBox.Text = this.loadoutList.returnLoadout(roleClicked).uniform;
+                oldUniform = uniformBox.Text;
                 vestBox.Text = this.loadoutList.returnLoadout(roleClicked).vest;
+                oldVest = vestBox.Text;
                 backpackBox.Text = this.loadoutList.returnLoadout(roleClicked).backpack;
+                oldBackpack = backpackBox.Text;
                 headGearBox.Text = this.loadoutList.returnLoadout(roleClicked).headGear;
+                oldHeadGear = headGearBox.Text;
+                itemsInUniformBox.Text = this.loadoutList.returnLoadout(roleClicked).itemsInUniform;
+                oldItemsInUniform = itemsInUniformBox.Text;
             }
 
         }
@@ -88,30 +99,48 @@ namespace KuikkaLoadoutEditor
         {
             if (loadoutList.roleExist(this.roleBox.Text))
             {
-                
-                loadoutList.editLoadout(this.roleBox.Text, this.loadoutBox.Text);
-                
-
-                   
+               
+               loadoutList.editLoadout(this.roleBox.Text, this.loadoutBox.Text);
+                                                                
             }
             else
             {
                 MessageBox.Show("Roolia ei löytynyt");
             }
-
-            
-        }
-
-        private void WeaponBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            // Following  commands changes Texts from textboxes to loadout
             try
             {
-                if (oldWeapon.Length > 0 && weaponBox.Text.Length > 0)
+                if (oldUniform.Length > 0 && uniformBox.Text.Length > 0)
                 {
-                    MessageBox.Show("Tämä on ns vanhaAse" + oldWeapon);
-                    this.loadoutBox.Text.Replace(oldWeapon, weaponBox.Text);
-                    oldWeapon = weaponBox.Text;
+                    this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldUniform, uniformBox.Text);
+                    oldUniform = uniformBox.Text;
+                    }
+                if (oldWeapon.Length > 0 && weaponBox.Text.Length > 0)
+                    {
+
+                        this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldWeapon, weaponBox.Text);
+                        oldWeapon = weaponBox.Text;
+                    }
+               if (oldVest.Length > 0 && vestBox.Text.Length > 0)
+                    {
+                        this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldVest, vestBox.Text);
+                        oldVest = vestBox.Text;
+                    }
+
+                if (oldBackpack.Length > 0 && backpackBox.Text.Length > 0)
+                {
+                    this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldBackpack, backpackBox.Text);
+                    oldBackpack = backpackBox.Text;
+                }
+
+                if (oldHeadGear.Length > 0 && headGearBox.Text.Length > 0)
+                {
+                    this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldHeadGear, headGearBox.Text);
+                    oldHeadGear = headGearBox.Text;
+                }
+
+                if(oldItemsInUniform.Length > 0 && itemsInUniformBox.Text.Length > 0){
+                    this.loadoutBox.Text = this.loadoutBox.Text.Replace(oldUniform, uniformBox.Text);
                 }
             }
             catch (Exception)
@@ -119,30 +148,56 @@ namespace KuikkaLoadoutEditor
                 return;
             }
             
-
-            
-
         }
 
-        private void Box_Uniform_TextChanged(object sender, TextChangedEventArgs e)
+        private void WeaponBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+                   
+        }
+
+        private void uniformBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void Box_Vest_TextChanged(object sender, TextChangedEventArgs e)
+        private void vestBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+   
+        }
+
+        private void backpackBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+ 
+        }
+
+        private void headGearBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+ 
+        }
+
+        // The role still appears in combobox. And clicking it this crashes the program.
+        private void buttonRemove_Click(object sender, RoutedEventArgs e)
+        {
+            int index = roleList.SelectedIndex;
+            String roleClicked = roleList.Items[index].ToString();
+            loadoutList.remove(loadoutList.returnLoadout(roleClicked));
+            if (index != -1)
+            {
+                roleList.Items.Remove(index);
+                if (roleList.Items.Count > 0)
+                {
+                    roleList.SelectedIndex = (index > 0 ? index - 1 : index);
+
+                }
+            }
+
+        }
+
+        private void itemsInUniformBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void Box_bacpack_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Box_HeadGear_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
 
     }

@@ -30,6 +30,8 @@ namespace KuikkaLoadoutEditor
         public String vest { get; set; }
         public String headGear { get; set; }
         public String backpack { get; set; }
+        public String itemsInUniform { get; set; }
+        public String itemsInVest { get; set; }
 
         public void edit(String newWeapon)
         {
@@ -60,6 +62,11 @@ namespace KuikkaLoadoutEditor
                 } else if (words[i].Equals("addBackpack")){
                     backpack = words[i+1];
                 }
+                else if (words[i].Equals("addItemToUniform"))
+                {
+                    itemsInUniform = words[i + 1];
+                }
+
             }
 
         }
