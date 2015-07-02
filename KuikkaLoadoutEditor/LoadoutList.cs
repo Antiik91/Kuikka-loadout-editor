@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 
 
@@ -49,7 +50,14 @@ namespace KuikkaLoadoutEditor
        // this doesn't work
         public void remove(Loadout removable)
         {
-            loadoutList.Remove(removable);
+            if (removable == null)
+            {
+                MessageBox.Show("ERROR: Roolia ei löytynyt");
+            }
+            else
+            {
+                loadoutList.Remove(removable);
+            }
         }
         public String getLoadout(String role)
         {

@@ -49,17 +49,17 @@ namespace KuikkaLoadoutEditor
 
 
 
-     
+
 
         public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+
+
             if (roleList.SelectedIndex < 0)
             {
-
+                return;
             }
-            else
-            {
-
                 int index = roleList.SelectedIndex;
                 String roleClicked = roleList.Items[index].ToString();
 
@@ -84,8 +84,11 @@ namespace KuikkaLoadoutEditor
                 otherItemsBox.Text = this.loadoutList.returnLoadout(roleClicked).otherItems;
                 oldOtherItems = otherItemsBox.Text;
             }
+        
 
-        }
+        
+
+
 
         public void createRole_Click(object sender, RoutedEventArgs e)
         {
@@ -202,20 +205,23 @@ namespace KuikkaLoadoutEditor
  
         }
 
-        // The role still appears in combobox. And clicking it this crashes the program.
+        
         private void buttonRemove_Click(object sender, RoutedEventArgs e)
         {
-            int index = roleList.SelectedIndex;
-            String roleClicked = roleList.Items[index].ToString();
-            loadoutList.remove(loadoutList.returnLoadout(roleClicked));
-            if (index != -1)
+            if (roleList.SelectedIndex >= 0)
             {
-                roleList.Items.Remove(index);
-                if (roleList.Items.Count > 0)
-                {
-                    roleList.SelectedIndex = (index > 0 ? index - 1 : index);
-
-                }
+                roleList.Items.RemoveAt(roleList.SelectedIndex);
+                roleBox.Text = "";
+                itemsInUniformBox.Text = "";
+                itemsInVestBox.Text = "";
+                itemsInBackPackBox.Text = "";
+                otherItemsBox.Text = "";
+                weaponBox.Text = "";
+                uniformBox.Text = "";
+                vestBox.Text = "";
+                backpackBox.Text = "";
+                headGearBox.Text = "";
+                loadoutBox.Text = "";
             }
 
         }
